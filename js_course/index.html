@@ -10,6 +10,10 @@
                 document.write("<button type=\'button\'>按鈕</button>");
             </script>
         <p>002</p>
+        <button type="button" onclick="hit()">
+            123
+        </button>
+        <p onclick="hit()">321</p>
     </body>
     <script>
         alert("123 進度條");
@@ -17,5 +21,17 @@
         document.write("<div>");
         document.write("<button type=\'button\'>按鈕</button>");
         document.write("</div>");
+
+        var name = "進度條";
+        var title = "進度條標題";
+        var score = 100;
+
+        console.log(typeof score + " " + score);
+
+        function hit(){
+            alert('被點惹');
+            alert('又被點惹');
+            alert('又又被點惹');
+        }
     </script>
 </html>
