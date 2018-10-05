@@ -4,6 +4,8 @@
         <meta charset="UTF-8" />
     </head>
     <body>
+        <h1 id="title">標題</h1>
+        <!-- <h2 id="title">副標</h2> id 一樣會先遇到先抓 -->
         <p>001</p>
         <script>
                 document.write("HI");
@@ -32,6 +34,11 @@
             alert('被點惹');
             alert('又被點惹');
             alert('又又被點惹');
+            var title = document.getElementById("title");
+            title.innerHTML = "Progress Bar";
         }
+
+        var names = ["John","HeHe"];
+        console.log(names);
     </script>
 </html>
