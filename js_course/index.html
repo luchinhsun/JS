@@ -16,6 +16,14 @@
             123
         </button>
         <p onclick="hit()">321</p>
+
+        <p class="content">content 1</p>
+        <p class="content">content 2</p>
+        <p class="content">content 3</p>
+        <p class="content">content 4</p>
+        <p class="content">content 5</p>
+
+        <input name="search" type="search" placeholder="搜尋132" />
     </body>
     <script>
         alert("123 進度條");
@@ -40,5 +48,22 @@
 
         var names = ["John","HeHe"];
         console.log(names);
+
+        // var contentElements = document.getElementsByClassName("content");
+        // console.log(contentElements);
+        // var pElement = contentElements[3];
+        // pElement.innerHTML = "AAA";
+        document.getElementsByClassName("content")[2].innerHTML = "AAA";
+
+        // var pElements = document.getElementsByTagName("p");
+        // console.log(pElements);
+        // var tag = pElements[4];
+        // tag.innerHTML = "Who?";
+
+        // var inputs = document.getElementsByName("search");
+        // console.log(inputs);
+        // alert(inputs[0].outerHTML)
+
+        // document.getElementsByTagNameNS
     </script>
 </html>
