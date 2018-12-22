@@ -1,0 +1,29 @@
+<html>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script>
+
+function init_body() {
+
+
+	$.ajax({
+		  url: "./json_data.json",
+		  type: "GET",
+		  dataType: "json",
+		  data: {"type": "last"},
+		  success: function(Jdata) {
+		    	alert("SUCCESS!!!");
+		    	alert(Jdata["gender"]);
+		  },
+		  error: function() {
+			    alert("ERROR!!!");
+  		}
+	});
+}
+
+</script>
+
+<body onload=init_body()>
+TEST PAGE
+</body>
+
+</html>

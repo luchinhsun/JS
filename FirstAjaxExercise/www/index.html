@@ -1,0 +1,62 @@
+<html>
+<head>
+Your ID
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script>
+
+function callajax(lname, fname){
+	
+	$.ajax({url:"./cgi-bin/get_data.cgi",
+		type: "POST",
+		dataType: "json",
+		data: {"fname": fname, "lname":lname},
+		success: function(Jdata) {
+			alert("SUCCESS!!!");
+			document.getElementById("add").value = Jdata["address"];
+			document.getElementById("ph").value = Jdata["phone"];
+			document.getElementById("gen").value = Jdata["gender"];
+		},
+		error: function() {
+                	alert("ERROR!!!");
+        	},
+		cache:"false"
+	})
+}
+
+</script>
+</head>
+<body>
+
+<div>
+<form method=post name="personnel" id="genderForm" action="cgi-bin/post_data.cgi"
+	<p>Please Enter student's name.</p>
+	First name: <input type="text" name="fname"><br>
+	Last name: <input type="text" name="lname"><br><br>	
+	Address: <input type="text" name="address" id="add"><br>
+	Phone: <input type="text" name="phone" id="ph"><br>
+	Gender: <input type="text" name="gender" id="gen"><br><br>
+
+	<input type="hidden" name="act_type" id="act_type_id" value="set_data">
+	<input type="button" onclick="Postform()" value="Submit">
+	<input type="button" onclick="Getform()"  value="Obtain">
+	<input type="reset">
+</form>
+</div>
+
+<script>
+
+function Postform() {
+    	document.getElementById("genderForm").submit();
+}
+
+function Getform() {
+	ln = document.getElementsByName("lname")[0].value;
+	fn = document.getElementsByName("fname")[0].value;
+	callajax(ln,fn);
+}
+
+
+</script>
+</body>
+</html>
+
