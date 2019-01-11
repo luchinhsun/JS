@@ -1,0 +1,6 @@
+If you commit some files, like aaa, and push it.
+After that you use git reset to white-out that commit and modify aaa.
+You will get a merge failed message when you want to push.
+Use git pull, you will get conflict-resolution in that file aaa(or you use git status to see).
+You need to change the file into what you want by manual,
+then you can push it(can use git status to see the error message was gone).
